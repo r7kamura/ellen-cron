@@ -79,7 +79,7 @@ module Ruboty
 
       def job_descriptions
         jobs.values.map do |attributes|
-          Ruboty::Cron::Job.new(attributes).description
+          Ruboty::Cron::Job.new(attributes).description.gsub('@', '(at)')
         end.join("\n")
       end
 
